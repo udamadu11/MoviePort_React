@@ -1,11 +1,14 @@
 import React, { Component} from 'react';
+import {searchMovie} from '../../action/searchActions';
+
 export class SearchForm extends Component{
+
     render(){
         return(
             <div className="jumbotron jumbotron-fluid mt-5 text-center">
                 <div className="container">
                     <h1 className="display-4 mb-3">
-                        <i className="fa fa-search" />Search For Movie, Tv series
+                        <i className="fa fa-search" />Search For Movie
                     </h1>
                     <form id=""searchForm>
                         <input 
@@ -13,6 +16,7 @@ export class SearchForm extends Component{
                             className="form-control"
                             name="searchText"
                             placeholder="Search movie, Tv Series.."
+                   
                         />
                         <button type="submit" className="btn btn-primary btn-bg mt-3">
                             Search
@@ -23,4 +27,6 @@ export class SearchForm extends Component{
         )
     }
 }
+
+
 export default SearchForm;

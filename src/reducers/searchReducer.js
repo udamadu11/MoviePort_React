@@ -1,6 +1,6 @@
-import {SEARCH_MOVIE} from './action/types';
+import {SEARCH_MOVIE} from '../action/types';
 const initialState ={
-    text = '',
+    text : '',
     movies : [],
     loading: false,
     movie: []
