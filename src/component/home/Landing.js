@@ -7,7 +7,7 @@ export class Landing extends Component{
             <div className="container">
                 <SearchForm />
             </div>
-        )
+        );
     }
 }
 export default Landing;

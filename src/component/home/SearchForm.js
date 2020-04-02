@@ -1,8 +1,12 @@
 import React, { Component} from 'react';
+
+import {connect} from 'react-redux';
 import {searchMovie} from '../../action/searchActions';
 
 export class SearchForm extends Component{
-
+    onChange = e =>{
+         this.props.searchMovie(e.target.value);
+    }
     render(){
         return(
             <div className="jumbotron jumbotron-fluid mt-5 text-center">
@@ -10,13 +14,13 @@ export class SearchForm extends Component{
                     <h1 className="display-4 mb-3">
                         <i className="fa fa-search" />Search For Movie
                     </h1>
-                    <form id=""searchForm>
+                    <form id="searchForm">
                         <input 
                             type="text"
                             className="form-control"
                             name="searchText"
                             placeholder="Search movie, Tv Series.."
-                   
+                            onChange={this.onChange}
                         />
                         <button type="submit" className="btn btn-primary btn-bg mt-3">
                             Search
@@ -24,9 +28,12 @@ export class SearchForm extends Component{
                     </form>
                 </div>
             </div>
-        )
+        );
     }
 }
 
+const mapStateToProps = state => ({
+    text: state.movies.text
+})
 
-export default SearchForm;
+export default connect(mapStateToProps, {searchMovie})(SearchForm);

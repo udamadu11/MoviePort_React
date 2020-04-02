@@ -3,15 +3,16 @@ import './App.css';
 import Navbar from './component/layout/navbar';
 import Footer from './component/layout/footer';
 import Landing from './component/home/Landing';
-
+import store from './store';
+import {Provider} from 'react-redux';
 class App extends Component {
   render(){
   return (
-    <div>
+    <Provider store={store}>
       <Navbar />
       <Landing />
       <Footer />
-      </div>
+    </Provider>
     );
   }
 }
